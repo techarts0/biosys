@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generate 3 publication-grade IEEE/Elsevier vector evaluation figures directly from:
+Generate 3 evaluation figures directly from:
   - locomo_results.json (Official LoCoMo, 10 convs, 5,882 turns, 1,536 QAs)
   - kill_test_results.json (Coding Agent trace & Consolidation Lag consistency sweep)
 
@@ -229,11 +229,7 @@ def build_fig6(locomo: Dict[str, Dict]) -> None:
         "Server ANN (%)\n[Hybrid Router]",
         "SLM Write Tok/q\n[Amygdala Gate]",
     ]
-    # Note: plot top 3 percentages on left axis, or normalize cleanly into 2x2 grouped metric bars
-    # Even cleaner: plot exact % for first 3 + scaled or direct annotation! Actually showing exact percentage
-    # Reduction/Gain OR two stacked mini-panels is super clear; let's use exact values with dual-axis or clean relative!
-    # Wait: best IEEE style for mixed units (3 percentages + 1 token count): show 3 percentage metrics cleanly on ax2,
-    # AND put Amygdala SLM write-cost reduction directly as "% of Unfiltered SLM Tokens (100% -> 55.7%)" so ALL 4 are 0-100%!!
+   
     full_r = locomo["BIOSYS-v2 (Adaptive Zone B)"]
     no_dtf = locomo["- w/o DTF Forwarding"]
     no_l = locomo["- w/o L-Cache"]

@@ -32,7 +32,7 @@ pip install vllm
 ```
 
 ### 2. LoCoMo Dataset
-The third-party `locomo10.json` dataset is not redistributed in this repository (excluded via `.gitignore`). Download `locomo10.json` from the official [Snap Research LoCoMo repository](https://github.com/snap-research/locomo) and place it at:
+Download the third-party `locomo10.json` dataset from the official [Snap Research LoCoMo repository](https://github.com/snap-research/locomo) and place it at:
 ```text
 data/locomo10.json
 ```

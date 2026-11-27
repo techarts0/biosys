@@ -1,13 +1,10 @@
 #!/usr/bin/env python3
 """
-Generate 4 IEEE/Elsevier publication-grade vector architecture figures for BIOSYS v2:
+Generate 4 vector architecture figures for BIOSYS v2:
   - figures/fig1_architecture.{pdf,svg,png}
   - figures/fig2_coprocessor.{pdf,svg,png}
   - figures/fig3_adapter.{pdf,svg,png}
   - figures/fig4_cascade.{pdf,svg,png}
-
-Polished v2: zero overlapping arrows/text, crisp Unicode/LaTeX math symbols,
-non-exclusive local fusion geometry, and print-safe academic colors.
 """
 
 from __future__ import annotations
