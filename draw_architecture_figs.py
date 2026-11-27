@@ -192,7 +192,7 @@ def build_fig1() -> None:
 
     cols = [
         (1.05, 2.55, "Cognitive Science (CLS)", C_TEAL_BG, C_TEAL_BD),
-        (3.85, 3.35, "BIOSYS v2 Architecture", C_BLUE_BG, C_BLUE_BD),
+        (3.85, 3.35, "BIOSYS Architecture", C_BLUE_BG, C_BLUE_BD),
         (7.45, 2.50, "Computer Systems", C_SLATE_BG, C_SLATE_BD),
     ]
     for cx, cw, title, bg, bd in cols:

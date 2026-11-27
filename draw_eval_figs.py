@@ -92,15 +92,15 @@ def build_fig5(locomo: Dict[str, Dict]) -> None:
             bbox=dict(boxstyle="round,pad=0.12", facecolor="white", edgecolor="none", alpha=0.82),
         )
 
-    # BIOSYS-v2 Pareto curve
+    # BIOSYS Pareto curve
     v2_pts = [
-        ("- w/o Prefix Zones", "BIOSYS-v2\n(No Zone B)", (-6, 15)),
-        ("BIOSYS-v2 (Adaptive Zone B)", "BIOSYS-v2\n(Adaptive)", (-8, 17)),
-        ("BIOSYS-v2 (Fixed Zone B)", "BIOSYS-v2\n(Fixed Zone B)", (8, 11)),
+        ("- w/o Prefix Zones", "BIOSYS\n(No Zone B)", (-6, 15)),
+        ("BIOSYS-v2 (Adaptive Zone B)", "BIOSYS\n(Adaptive)", (-8, 17)),
+        ("BIOSYS-v2 (Fixed Zone B)", "BIOSYS\n(Fixed Zone B)", (8, 11)),
     ]
     xs_v2 = [locomo[k]["cost_a10"] for k, _, _ in v2_pts]
     ys_v2 = [locomo[k]["ev_hit_%"] for k, _, _ in v2_pts]
-    ax1.plot(xs_v2, ys_v2, color=C_BLUE, lw=2.0, ls="-", zorder=5, label="BIOSYS-v2 Pareto Frontier")
+    ax1.plot(xs_v2, ys_v2, color=C_BLUE, lw=2.0, ls="-", zorder=5, label="BIOSYS Pareto Frontier")
     ax1.scatter(xs_v2, ys_v2, c=C_BLUE, marker="o", s=88, edgecolors="#FFFFFF", linewidths=1.1, zorder=6)
 
     for (key, lbl, (dx, dy)) in v2_pts:
@@ -131,9 +131,9 @@ def build_fig5(locomo: Dict[str, Dict]) -> None:
         ("Naive-RAG (Top-8)", "Naive-RAG"),
         ("Mem0/Zep (Sync-KG)", "Sync-KG"),
         ("BIOSYS-v1 (Orig: LSH,noDTF)", "Pure-LSH"),
-        ("- w/o Prefix Zones", "v2 (No\nZone B)"),
-        ("BIOSYS-v2 (Adaptive Zone B)", "v2\n(Adaptive)"),
-        ("BIOSYS-v2 (Fixed Zone B)", "v2\n(Fixed)"),
+        ("- w/o Prefix Zones", "BIOSYS\n(No B)"),
+        ("BIOSYS-v2 (Adaptive Zone B)", "BIOSYS\n(Adapt.)"),
+        ("BIOSYS-v2 (Fixed Zone B)", "BIOSYS\n(Fixed)"),
     ]
     labels_b = [lbl for _, lbl in systems_b]
     pref_vals = [locomo[k]["pref_hit_%"] for k, _ in systems_b]
@@ -180,10 +180,10 @@ def build_fig6(locomo: Dict[str, Dict]) -> None:
 
     # --- Panel (a): 100% Stacked Horizontal Bar of 5-Tier Funnel ---
     funnel_systems = [
-        ("BIOSYS-v2 (Adaptive Zone B)", "BIOSYS-v2 (Full)"),
-        ("- w/o L-Cache", "v2 w/o L-Cache"),
-        ("- Keyword-Only Router", "v2 Keyword-Only"),
-        ("BIOSYS-v1 (Orig: LSH,noDTF)", "BIOSYS-v1 (LSH)"),
+        ("BIOSYS-v2 (Adaptive Zone B)", "BIOSYS (Full)"),
+        ("- w/o L-Cache", "BIOSYS w/o L-Cache"),
+        ("- Keyword-Only Router", "BIOSYS Keyword-Only"),
+        ("BIOSYS-v1 (Orig: LSH,noDTF)", "Pure-LSH Cache"),
         ("Mem0/Zep (Sync-KG)", "Sync-KG / RAG"),
     ]
     tiers = [
@@ -256,7 +256,7 @@ def build_fig6(locomo: Dict[str, Dict]) -> None:
     ]
     x2 = np.arange(len(cat_labels))
     bw = 0.34
-    b_on = ax2.bar(x2 - bw / 2, with_mod, width=bw, color=C_BLUE, edgecolor=C_INK, lw=0.6, label="BIOSYS-v2 (Module ON)")
+    b_on = ax2.bar(x2 - bw / 2, with_mod, width=bw, color=C_BLUE, edgecolor=C_INK, lw=0.6, label="BIOSYS (Module ON)")
     b_off = ax2.bar(x2 + bw / 2, without_mod, width=bw, color=C_SLATE, edgecolor=C_INK, lw=0.6, hatch="\\\\", label="Ablated (Module OFF)")
 
     for i, (bo, bf) in enumerate(zip(b_on, b_off)):
@@ -293,8 +293,8 @@ def build_fig7(kill_data: Dict[str, List[Dict]]) -> None:
         ("Mem0/Zep (Sync-KG)", "Sync-\nKG"),
         ("Naive-RAG (Top-K)", "Naive-\nRAG"),
         ("BIOSYS-v1 (Orig: LSH,noDTF)", "Pure-\nLSH"),
-        ("- w/o Prefix Zones", "v2 (No\nZones)"),
-        ("BIOSYS-v2 (Full Route A)", "BIOSYS-\nv2 (Full)"),
+        ("- w/o Prefix Zones", "BIOSYS\n(NoZones)"),
+        ("BIOSYS-v2 (Full Route A)", "BIOSYS\n(Full)"),
     ]
     x = np.arange(len(ca_systems))
     eff_inf = [ca[k]["eff_infer_tok/q"] for k, _ in ca_systems]
@@ -401,9 +401,9 @@ def build_fig8(vllm_data: Dict[str, Dict[str, Dict]]) -> None:
         ("Naive-RAG", "Naive-\nRAG"),
         ("Mem0/Zep-Sync", "Sync-KG"),
         ("Mem0/Zep-Async", "Async-KG"),
-        ("BIOSYS-v2-NoZones", "v2 (No\nZones)"),
-        ("BIOSYS-v2-Adaptive", "v2\n(Adaptive)"),
-        ("BIOSYS-v2-Fixed", "v2\n(Fixed)"),
+        ("BIOSYS-v2-NoZones", "BIOSYS\n(NoZones)"),
+        ("BIOSYS-v2-Adaptive", "BIOSYS\n(Adapt.)"),
+        ("BIOSYS-v2-Fixed", "BIOSYS\n(Fixed)"),
     ]
     x = np.arange(len(sys_a))
     p50 = [lc[k]["ttft_p50_ms"] for k, _ in sys_a]
@@ -460,8 +460,8 @@ def build_fig8(vllm_data: Dict[str, Dict[str, Dict]]) -> None:
     sys_b = [
         ("Full-Context", "Full-Ctx\n(Trunc.)"),
         ("Mem0/Zep-Sync", "Sync-KG"),
-        ("BIOSYS-v2-NoZones", "v2 (No\nZones)"),
-        ("BIOSYS-v2-Full", "BIOSYS-v2\n(Full)"),
+        ("BIOSYS-v2-NoZones", "BIOSYS\n(NoZones)"),
+        ("BIOSYS-v2-Full", "BIOSYS\n(Full)"),
     ]
     xb = np.arange(len(sys_b))
     p50_b = [ca[k]["ttft_p50_ms"] for k, _ in sys_b]

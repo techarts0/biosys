@@ -203,7 +203,7 @@ def main() -> None:
     ap.add_argument("--concurrencies", default="1,4,8,16,32", help="Comma-separated concurrent session counts")
     ap.add_argument("--turns", type=int, default=20, help="Fixed turns per session across all C (controlled horizon)")
     ap.add_argument("--verify-r1", action="store_true",
-                    help="Targeted ~25-min TSC R1 verification: Sync-KG-Sorted+Offload (C=16,32) + 3x isolated repeats of 4 headline C=32 points")
+                    help="Targeted isolated multi-repeat verification: Sync-KG-Sorted+Offload (C=16,32) + 3x isolated repeats of 4 headline C=32 points")
     ap.add_argument("--repeats", type=int, default=3, help="Number of independent isolated repeats in --verify-r1 mode")
     ap.add_argument("--out", default="vllm_concurrent_results.json")
     ap.add_argument("--resume", action="store_true")
@@ -241,7 +241,7 @@ def main() -> None:
     run_nonce = str(int(time.time()))[-6:]
 
     if args.verify_r1:
-        # Targeted TSC verification: strictly isolated per-policy & per-repeat prefix tags
+        # Targeted isolated verification: strictly isolated per-policy & per-repeat prefix tags
         n_rep = 2 if args.smoke else args.repeats
         turns = 6 if args.smoke else args.turns
         c_hi = 4 if args.smoke else 32
@@ -254,7 +254,7 @@ def main() -> None:
             ("locomo", "BIOSYS-v2-Adaptive", "BIOSYS-Adaptive", c_hi, 24),
             ("locomo", "BIOSYS-v2-Fixed", "BIOSYS-Fixed", c_hi, 24),
         ]
-        print(f"\n>>> TSC R1 Verification Suite ({len(plan)} configs x {n_rep} isolated repeats, turns={turns}) <<<")
+        print(f"\n>>> Isolated Multi-Repeat Verification Suite ({len(plan)} configs x {n_rep} isolated repeats, turns={turns}) <<<")
         summary_rows: List[Dict[str, object]] = []
         for wl, internal_key, display_name, C, max_tok in plan:
             rep_rows: List[Dict[str, object]] = []
@@ -292,7 +292,7 @@ def main() -> None:
             })
 
         print(f"\n{'=' * 124}")
-        print(f" TSC R1 ISOLATED MULTI-REPEAT SUMMARY (model={client.model}, repeats={n_rep}, turns={turns})")
+        print(f" ISOLATED MULTI-REPEAT SUMMARY (model={client.model}, repeats={n_rep}, turns={turns})")
         print(f"{'=' * 124}")
         print(f"{'WL':<6} | {'System':<22} | {'C':>2} | {'KVHit% (min-max)':<18} | {'P50ms (min-max)':<22} | {'Thr r/s (min-max)':<20} | {'GP300 (min-max)':<18}")
         print("-" * 124)
