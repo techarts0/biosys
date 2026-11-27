@@ -3,7 +3,7 @@
 Official evaluation code, trace generators, vLLM prompt-replay harnesses, and experimental result logs for:
 
 > **BIOSYS: A Hierarchical Memory Service for Long-Horizon LLM Agents**  
-> Pengfei Wang, Xiaolei Guo, and Minyuan Zhao
+> Pengfei Wang, Xiaolei Guo, and Mingyuan Zhao
 
 ---
 
@@ -88,7 +88,7 @@ python draw_eval_figs.py
 ```bibtex
 @article{wang2026biosys,
   title   = {{BIOSYS}: A Hierarchical Memory Service for Long-Horizon {LLM} Agents},
-  author  = {Wang, Pengfei and Guo, Xiaolei and Zhao, Minyuan},
+  author  = {Wang, Pengfei and Guo, Xiaolei and Zhao, Mingyuan},
   journal = {arXiv preprint arXiv:XXXX.XXXXX},
   year    = {2026}
 }
