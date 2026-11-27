@@ -1,0 +1,6 @@
+﻿__pycache__/
+*.pyc
+tmp*.json
+smoke*.json
+# Exclude third-party LoCoMo dataset from public GitHub redistribution (download from Snap Research repo)
+data/locomo10.json

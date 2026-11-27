@@ -1,0 +1,503 @@
+{
+  "assistant": [
+    {
+      "name": "Full-Context",
+      "avg_raw_tok": 5231.1,
+      "prefix_hit_%": 97.5,
+      "eff_infer_tok/q": 642.7,
+      "slm_tok/q": 0.0,
+      "amort_cost_0.15x": 642.7,
+      "amort_cost_1.0x": 642.7,
+      "net_kb/q": 0.0,
+      "latest_recall_%": 100.0,
+      "stale_read_%": 0.0,
+      "ann_rate_%": 0.0,
+      "funnel": {
+        "FULL": 72
+      }
+    },
+    {
+      "name": "Full+Compact(6000)",
+      "avg_raw_tok": 2876.0,
+      "prefix_hit_%": 95.1,
+      "eff_infer_tok/q": 413.4,
+      "slm_tok/q": 76.7,
+      "amort_cost_0.15x": 424.9,
+      "amort_cost_1.0x": 490.0,
+      "net_kb/q": 0.0,
+      "latest_recall_%": 86.1,
+      "stale_read_%": 0.0,
+      "ann_rate_%": 0.0,
+      "funnel": {
+        "FULL": 72
+      }
+    },
+    {
+      "name": "Naive-RAG (Top-K)",
+      "avg_raw_tok": 403.8,
+      "prefix_hit_%": 49.7,
+      "eff_infer_tok/q": 223.2,
+      "slm_tok/q": 0.0,
+      "amort_cost_0.15x": 223.2,
+      "amort_cost_1.0x": 223.2,
+      "net_kb/q": 0.55,
+      "latest_recall_%": 30.6,
+      "stale_read_%": 1.39,
+      "ann_rate_%": 100.0,
+      "funnel": {
+        "ANN": 72
+      }
+    },
+    {
+      "name": "Mem0/Zep (Sync-KG)",
+      "avg_raw_tok": 575.3,
+      "prefix_hit_%": 39.0,
+      "eff_infer_tok/q": 373.3,
+      "slm_tok/q": 207.9,
+      "amort_cost_0.15x": 404.5,
+      "amort_cost_1.0x": 581.2,
+      "net_kb/q": 2.54,
+      "latest_recall_%": 100.0,
+      "stale_read_%": 0.0,
+      "ann_rate_%": 100.0,
+      "funnel": {
+        "ANN": 72
+      }
+    },
+    {
+      "name": "Mem0/Zep (Async-Lag10)",
+      "avg_raw_tok": 575.1,
+      "prefix_hit_%": 39.5,
+      "eff_infer_tok/q": 370.7,
+      "slm_tok/q": 199.3,
+      "amort_cost_0.15x": 400.6,
+      "amort_cost_1.0x": 570.1,
+      "net_kb/q": 2.54,
+      "latest_recall_%": 86.1,
+      "stale_read_%": 13.89,
+      "ann_rate_%": 100.0,
+      "funnel": {
+        "ANN": 72
+      }
+    },
+    {
+      "name": "BIOSYS-v1 (Orig: LSH,noDTF)",
+      "avg_raw_tok": 385.1,
+      "prefix_hit_%": 49.2,
+      "eff_infer_tok/q": 214.7,
+      "slm_tok/q": 181.6,
+      "amort_cost_0.15x": 241.9,
+      "amort_cost_1.0x": 396.3,
+      "net_kb/q": 0.85,
+      "latest_recall_%": 86.1,
+      "stale_read_%": 12.5,
+      "ann_rate_%": 100.0,
+      "funnel": {
+        "ANN": 72
+      }
+    },
+    {
+      "name": "BIOSYS-v2 (Full Route A)",
+      "avg_raw_tok": 737.2,
+      "prefix_hit_%": 84.8,
+      "eff_infer_tok/q": 174.8,
+      "slm_tok/q": 36.9,
+      "amort_cost_0.15x": 180.3,
+      "amort_cost_1.0x": 211.7,
+      "net_kb/q": 0.05,
+      "latest_recall_%": 100.0,
+      "stale_read_%": 0.0,
+      "ann_rate_%": 0.0,
+      "funnel": {
+        "L2": 25,
+        "DTF-FWD": 13,
+        "L3": 26,
+        "L-TLB": 8
+      }
+    },
+    {
+      "name": "  - w/o Prefix Zones",
+      "avg_raw_tok": 321.0,
+      "prefix_hit_%": 59.0,
+      "eff_infer_tok/q": 150.6,
+      "slm_tok/q": 36.9,
+      "amort_cost_0.15x": 156.1,
+      "amort_cost_1.0x": 187.5,
+      "net_kb/q": 0.05,
+      "latest_recall_%": 100.0,
+      "stale_read_%": 0.0,
+      "ann_rate_%": 0.0,
+      "funnel": {
+        "L2": 25,
+        "DTF-FWD": 13,
+        "L3": 26,
+        "L-TLB": 8
+      }
+    },
+    {
+      "name": "  - w/o DTF Forwarding",
+      "avg_raw_tok": 737.2,
+      "prefix_hit_%": 84.8,
+      "eff_infer_tok/q": 174.8,
+      "slm_tok/q": 36.9,
+      "amort_cost_0.15x": 180.4,
+      "amort_cost_1.0x": 211.7,
+      "net_kb/q": 0.03,
+      "latest_recall_%": 87.5,
+      "stale_read_%": 12.5,
+      "ann_rate_%": 0.0,
+      "funnel": {
+        "L2": 25,
+        "L-TLB": 12,
+        "L3": 35
+      }
+    },
+    {
+      "name": "  - w/o Amygdala Gate",
+      "avg_raw_tok": 1027.4,
+      "prefix_hit_%": 82.7,
+      "eff_infer_tok/q": 262.8,
+      "slm_tok/q": 181.6,
+      "amort_cost_0.15x": 290.0,
+      "amort_cost_1.0x": 444.4,
+      "net_kb/q": 0.02,
+      "latest_recall_%": 100.0,
+      "stale_read_%": 0.0,
+      "ann_rate_%": 0.0,
+      "funnel": {
+        "L2": 23,
+        "L3": 45,
+        "DTF-FWD": 1,
+        "K-TLB": 3
+      }
+    },
+    {
+      "name": "  - Keyword-Only Encoder",
+      "avg_raw_tok": 749.9,
+      "prefix_hit_%": 83.3,
+      "eff_infer_tok/q": 187.5,
+      "slm_tok/q": 36.9,
+      "amort_cost_0.15x": 193.0,
+      "amort_cost_1.0x": 224.4,
+      "net_kb/q": 0.26,
+      "latest_recall_%": 88.9,
+      "stale_read_%": 4.17,
+      "ann_rate_%": 29.2,
+      "funnel": {
+        "ANN": 21,
+        "L2": 30,
+        "DTF-FWD": 2,
+        "L-TLB": 7,
+        "L3": 12
+      }
+    }
+  ],
+  "coding_agent": [
+    {
+      "name": "Full-Context",
+      "avg_raw_tok": 19013.3,
+      "prefix_hit_%": 96.5,
+      "eff_infer_tok/q": 2505.1,
+      "slm_tok/q": 0.0,
+      "amort_cost_0.15x": 2505.1,
+      "amort_cost_1.0x": 2505.1,
+      "net_kb/q": 0.0,
+      "latest_recall_%": 100.0,
+      "stale_read_%": 0.0,
+      "ann_rate_%": 0.0,
+      "funnel": {
+        "FULL": 52
+      }
+    },
+    {
+      "name": "Full+Compact(6000)",
+      "avg_raw_tok": 3612.2,
+      "prefix_hit_%": 81.2,
+      "eff_infer_tok/q": 973.7,
+      "slm_tok/q": 630.0,
+      "amort_cost_0.15x": 1068.2,
+      "amort_cost_1.0x": 1603.7,
+      "net_kb/q": 0.0,
+      "latest_recall_%": 50.0,
+      "stale_read_%": 0.0,
+      "ann_rate_%": 0.0,
+      "funnel": {
+        "FULL": 52
+      }
+    },
+    {
+      "name": "Naive-RAG (Top-K)",
+      "avg_raw_tok": 742.9,
+      "prefix_hit_%": 26.8,
+      "eff_infer_tok/q": 563.4,
+      "slm_tok/q": 0.0,
+      "amort_cost_0.15x": 563.4,
+      "amort_cost_1.0x": 563.4,
+      "net_kb/q": 0.57,
+      "latest_recall_%": 25.0,
+      "stale_read_%": 0.0,
+      "ann_rate_%": 100.0,
+      "funnel": {
+        "ANN": 52
+      }
+    },
+    {
+      "name": "Mem0/Zep (Sync-KG)",
+      "avg_raw_tok": 805.6,
+      "prefix_hit_%": 27.7,
+      "eff_infer_tok/q": 604.8,
+      "slm_tok/q": 842.1,
+      "amort_cost_0.15x": 731.1,
+      "amort_cost_1.0x": 1446.9,
+      "net_kb/q": 2.55,
+      "latest_recall_%": 100.0,
+      "stale_read_%": 0.0,
+      "ann_rate_%": 100.0,
+      "funnel": {
+        "ANN": 52
+      }
+    },
+    {
+      "name": "Mem0/Zep (Async-Lag10)",
+      "avg_raw_tok": 805.4,
+      "prefix_hit_%": 27.3,
+      "eff_infer_tok/q": 607.4,
+      "slm_tok/q": 809.8,
+      "amort_cost_0.15x": 728.9,
+      "amort_cost_1.0x": 1417.2,
+      "net_kb/q": 2.55,
+      "latest_recall_%": 92.3,
+      "stale_read_%": 5.77,
+      "ann_rate_%": 100.0,
+      "funnel": {
+        "ANN": 52
+      }
+    },
+    {
+      "name": "BIOSYS-v1 (Orig: LSH,noDTF)",
+      "avg_raw_tok": 615.0,
+      "prefix_hit_%": 30.6,
+      "eff_infer_tok/q": 445.5,
+      "slm_tok/q": 782.1,
+      "amort_cost_0.15x": 562.9,
+      "amort_cost_1.0x": 1227.7,
+      "net_kb/q": 0.85,
+      "latest_recall_%": 92.3,
+      "stale_read_%": 5.77,
+      "ann_rate_%": 100.0,
+      "funnel": {
+        "ANN": 52
+      }
+    },
+    {
+      "name": "BIOSYS-v2 (Full Route A)",
+      "avg_raw_tok": 648.0,
+      "prefix_hit_%": 83.1,
+      "eff_infer_tok/q": 163.4,
+      "slm_tok/q": 51.2,
+      "amort_cost_0.15x": 171.0,
+      "amort_cost_1.0x": 214.5,
+      "net_kb/q": 0.1,
+      "latest_recall_%": 96.2,
+      "stale_read_%": 0.0,
+      "ann_rate_%": 5.8,
+      "funnel": {
+        "L2": 16,
+        "DTF-FWD": 7,
+        "L-TLB": 13,
+        "ANN": 3,
+        "L3": 13
+      }
+    },
+    {
+      "name": "  - w/o Prefix Zones",
+      "avg_raw_tok": 550.6,
+      "prefix_hit_%": 34.2,
+      "eff_infer_tok/q": 381.2,
+      "slm_tok/q": 51.2,
+      "amort_cost_0.15x": 388.8,
+      "amort_cost_1.0x": 432.3,
+      "net_kb/q": 0.1,
+      "latest_recall_%": 96.2,
+      "stale_read_%": 0.0,
+      "ann_rate_%": 5.8,
+      "funnel": {
+        "L2": 16,
+        "DTF-FWD": 7,
+        "L-TLB": 13,
+        "ANN": 3,
+        "L3": 13
+      }
+    },
+    {
+      "name": "  - w/o DTF Forwarding",
+      "avg_raw_tok": 647.6,
+      "prefix_hit_%": 83.2,
+      "eff_infer_tok/q": 163.0,
+      "slm_tok/q": 51.2,
+      "amort_cost_0.15x": 170.6,
+      "amort_cost_1.0x": 214.1,
+      "net_kb/q": 0.1,
+      "latest_recall_%": 96.2,
+      "stale_read_%": 0.0,
+      "ann_rate_%": 5.8,
+      "funnel": {
+        "L2": 16,
+        "L-TLB": 19,
+        "ANN": 3,
+        "L3": 14
+      }
+    },
+    {
+      "name": "  - w/o Amygdala Gate",
+      "avg_raw_tok": 1206.5,
+      "prefix_hit_%": 66.5,
+      "eff_infer_tok/q": 484.9,
+      "slm_tok/q": 782.1,
+      "amort_cost_0.15x": 602.2,
+      "amort_cost_1.0x": 1267.0,
+      "net_kb/q": 0.0,
+      "latest_recall_%": 100.0,
+      "stale_read_%": 0.0,
+      "ann_rate_%": 0.0,
+      "funnel": {
+        "L2": 14,
+        "L3": 37,
+        "DTF-FWD": 1
+      }
+    },
+    {
+      "name": "  - Keyword-Only Encoder",
+      "avg_raw_tok": 657.4,
+      "prefix_hit_%": 81.9,
+      "eff_infer_tok/q": 172.8,
+      "slm_tok/q": 51.2,
+      "amort_cost_0.15x": 180.4,
+      "amort_cost_1.0x": 223.9,
+      "net_kb/q": 0.22,
+      "latest_recall_%": 84.6,
+      "stale_read_%": 9.62,
+      "ann_rate_%": 30.8,
+      "funnel": {
+        "ANN": 16,
+        "L2": 17,
+        "L-TLB": 12,
+        "DTF-FWD": 2,
+        "L3": 5
+      }
+    }
+  ],
+  "lag_sweep": [
+    {
+      "name": "Lag= 5 | DTF=OFF",
+      "avg_raw_tok": 778.9,
+      "prefix_hit_%": 85.0,
+      "eff_infer_tok/q": 182.9,
+      "slm_tok/q": 40.6,
+      "amort_cost_0.15x": 189.0,
+      "amort_cost_1.0x": 223.5,
+      "net_kb/q": 0.02,
+      "latest_recall_%": 97.2,
+      "stale_read_%": 2.78,
+      "ann_rate_%": 0.0,
+      "funnel": {
+        "L2": 25,
+        "L-TLB": 9,
+        "L3": 38
+      }
+    },
+    {
+      "name": "Lag= 5 | DTF=ON ",
+      "avg_raw_tok": 778.8,
+      "prefix_hit_%": 85.0,
+      "eff_infer_tok/q": 182.8,
+      "slm_tok/q": 40.6,
+      "amort_cost_0.15x": 188.9,
+      "amort_cost_1.0x": 223.4,
+      "net_kb/q": 0.03,
+      "latest_recall_%": 100.0,
+      "stale_read_%": 0.0,
+      "ann_rate_%": 0.0,
+      "funnel": {
+        "L2": 25,
+        "DTF-FWD": 3,
+        "L3": 36,
+        "L-TLB": 8
+      }
+    },
+    {
+      "name": "Lag=10 | DTF=OFF",
+      "avg_raw_tok": 737.2,
+      "prefix_hit_%": 84.8,
+      "eff_infer_tok/q": 174.8,
+      "slm_tok/q": 36.9,
+      "amort_cost_0.15x": 180.4,
+      "amort_cost_1.0x": 211.7,
+      "net_kb/q": 0.03,
+      "latest_recall_%": 87.5,
+      "stale_read_%": 12.5,
+      "ann_rate_%": 0.0,
+      "funnel": {
+        "L2": 25,
+        "L-TLB": 12,
+        "L3": 35
+      }
+    },
+    {
+      "name": "Lag=10 | DTF=ON ",
+      "avg_raw_tok": 737.2,
+      "prefix_hit_%": 84.8,
+      "eff_infer_tok/q": 174.8,
+      "slm_tok/q": 36.9,
+      "amort_cost_0.15x": 180.3,
+      "amort_cost_1.0x": 211.7,
+      "net_kb/q": 0.05,
+      "latest_recall_%": 100.0,
+      "stale_read_%": 0.0,
+      "ann_rate_%": 0.0,
+      "funnel": {
+        "L2": 25,
+        "DTF-FWD": 13,
+        "L3": 26,
+        "L-TLB": 8
+      }
+    },
+    {
+      "name": "Lag=20 | DTF=OFF",
+      "avg_raw_tok": 621.1,
+      "prefix_hit_%": 84.3,
+      "eff_infer_tok/q": 149.9,
+      "slm_tok/q": 29.5,
+      "amort_cost_0.15x": 154.3,
+      "amort_cost_1.0x": 179.4,
+      "net_kb/q": 0.06,
+      "latest_recall_%": 91.7,
+      "stale_read_%": 8.33,
+      "ann_rate_%": 0.0,
+      "funnel": {
+        "L2": 25,
+        "L-TLB": 25,
+        "L3": 22
+      }
+    },
+    {
+      "name": "Lag=20 | DTF=ON ",
+      "avg_raw_tok": 621.8,
+      "prefix_hit_%": 84.2,
+      "eff_infer_tok/q": 150.6,
+      "slm_tok/q": 29.5,
+      "amort_cost_0.15x": 155.0,
+      "amort_cost_1.0x": 180.1,
+      "net_kb/q": 0.07,
+      "latest_recall_%": 100.0,
+      "stale_read_%": 0.0,
+      "ann_rate_%": 0.0,
+      "funnel": {
+        "L2": 25,
+        "DTF-FWD": 24,
+        "L-TLB": 8,
+        "L3": 15
+      }
+    }
+  ]
+}

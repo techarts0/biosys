@@ -1,0 +1,121 @@
+{
+  "truncation_audit": {
+    "max_prompt_words": 7200,
+    "locomo_total": 1536,
+    "locomo_truncated": 1098,
+    "locomo_truncated_%": 71.5,
+    "locomo_max_words_before_trunc": 24143,
+    "coding_total": 60,
+    "coding_truncated": 50,
+    "coding_truncated_%": 83.3,
+    "coding_max_words_before_trunc": 39038
+  },
+  "disk_wal_crash_bench": {
+    "strict_fsync_n": 500,
+    "strict_fsync_p50_ms": 0.74,
+    "strict_fsync_p99_ms": 1.57,
+    "group_commit8_n": 2000,
+    "group_commit8_mean_ms": 0.116,
+    "group_commit8_p99_ms": 1.16,
+    "o1_offset_read_p50_us": 13.9,
+    "o1_offset_read_p99_us": 108.4,
+    "crash_injections": 5,
+    "lost_committed_records": 0,
+    "recovery_2000_turns_ms": 20.34,
+    "wal_2000_turns_kb": 445.9
+  },
+  "sensitivity": {
+    "alpha_sweep": [
+      {
+        "alpha": 0.05,
+        "tau_admit": 0.109,
+        "adp_zone_b_tok": 511.5,
+        "adp_pref_%": 77.0,
+        "adp_cost": 260.0,
+        "adp_any_ev_%": 67.2,
+        "adp_all_ev_%": 51.8,
+        "fix_cost": 320.2,
+        "fix_any_ev_%": 74.7,
+        "cost_saving_vs_fixed_%": 18.8
+      },
+      {
+        "alpha": 0.1,
+        "tau_admit": 0.156,
+        "adp_zone_b_tok": 497.2,
+        "adp_pref_%": 76.5,
+        "adp_cost": 295.0,
+        "adp_any_ev_%": 67.0,
+        "adp_all_ev_%": 51.7,
+        "fix_cost": 389.6,
+        "fix_any_ev_%": 74.7,
+        "cost_saving_vs_fixed_%": 24.3
+      },
+      {
+        "alpha": 0.25,
+        "tau_admit": 0.297,
+        "adp_zone_b_tok": 478.5,
+        "adp_pref_%": 76.0,
+        "adp_cost": 390.6,
+        "adp_any_ev_%": 66.9,
+        "adp_all_ev_%": 51.6,
+        "fix_cost": 597.8,
+        "fix_any_ev_%": 74.7,
+        "cost_saving_vs_fixed_%": 34.7
+      },
+      {
+        "alpha": 0.5,
+        "tau_admit": 0.531,
+        "adp_zone_b_tok": 270.8,
+        "adp_pref_%": 69.5,
+        "adp_cost": 450.7,
+        "adp_any_ev_%": 64.4,
+        "adp_all_ev_%": 49.9,
+        "fix_cost": 944.6,
+        "fix_any_ev_%": 74.7,
+        "cost_saving_vs_fixed_%": 52.3
+      }
+    ],
+    "epoch_sweep": [
+      {
+        "E": 4,
+        "tau_admit": 0.325,
+        "zone_b_tok": 493.2,
+        "pref_%": 67.8,
+        "uncached_tok": 280.1,
+        "cost_a10": 360.5,
+        "any_ev_%": 68.1,
+        "all_ev_%": 52.7
+      },
+      {
+        "E": 8,
+        "tau_admit": 0.213,
+        "zone_b_tok": 512.6,
+        "pref_%": 73.6,
+        "uncached_tok": 234.9,
+        "cost_a10": 321.8,
+        "any_ev_%": 68.2,
+        "all_ev_%": 52.5
+      },
+      {
+        "E": 16,
+        "tau_admit": 0.156,
+        "zone_b_tok": 497.2,
+        "pref_%": 76.5,
+        "uncached_tok": 206.5,
+        "cost_a10": 295.0,
+        "any_ev_%": 67.0,
+        "all_ev_%": 51.7
+      },
+      {
+        "E": 32,
+        "tau_admit": 0.128,
+        "zone_b_tok": 468.2,
+        "pref_%": 77.5,
+        "uncached_tok": 191.5,
+        "cost_a10": 278.8,
+        "any_ev_%": 66.0,
+        "all_ev_%": 51.3
+      }
+    ]
+  }
+}
